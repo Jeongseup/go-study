@@ -10,6 +10,11 @@ func printStudents(students ...string) {
 	fmt.Println(reflect.TypeOf(students))
 }
 
+const a int = 3
+
 func main() {
 	printStudents("김박사", "오박사", "손정습")
+
+	fmt.Print(a)
+
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 )
 
 func main() {
@@ -41,7 +42,7 @@ func main() {
 	// fmt.Println(array[1])
 
 	var a []int
-	b := make([]int, 0) // 이게 초기값을 할당해준거라는데.. 왜 print에는 출력이 안될까?
+	b := make([]int, 10) // 이게 초기값을 할당해준거라는데.. 왜 print에는 출력이 안될까? => make 뒤에 input은 생성하는 배열을 의미
 	c := []int{}
 	d := make([]int, 0, 1)
 
@@ -70,4 +71,5 @@ func main() {
 
 	fmt.Println(foo3 == foo4) // slice가 아닌 array끼리는 == 비교연산자 가능.!
 
+	fmt.Println(reflect.TypeOf(slice))
 }
