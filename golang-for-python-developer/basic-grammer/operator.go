@@ -34,7 +34,10 @@ func plusViod(a, b int) {
 }
 
 func main() {
-	a := 8
+	// a := 8
+	var a int // variable created
+	a = 8     // assign
+
 	b := 4
 
 	fmt.Println(a + b)
