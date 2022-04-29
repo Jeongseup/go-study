@@ -1,2 +1,4 @@
+github.com/Jeongseup/go-study/go-cmd v0.0.0-20220429091939-a7a6d078c3d5 h1:JsFILLnKPaEZfk84WhjoKzUDMvGAMIq0rsb3I/rGOwQ=
+github.com/Jeongseup/go-study/go-cmd v0.0.0-20220429091939-a7a6d078c3d5/go.mod h1:GaxSquLnGvGQnDcu+I4cKFb7UEGH5s1e1Npxx4YbfUk=
 github.com/fadeev/hello v0.0.0-20200601054839-1bd1206db808 h1:/p8Y5TDycJVxMwODF8h4v13IQXoTF2IcFWIR0JATLjI=
 github.com/fadeev/hello v0.0.0-20200601054839-1bd1206db808/go.mod h1:kfQoa/m4ciJTW8iXKREXTnBFcaPpnlFEdkVQyGMeZhY=
