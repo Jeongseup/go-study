@@ -6,6 +6,11 @@ import (
 	"time"
 )
 
+type Result struct {
+	strikes int
+	balls   int
+}
+
 func main() {
 	rand.Seed(time.Now().UnixNano())
 
@@ -64,20 +69,88 @@ func MakeNumbers() [3]int {
 	return rst
 }
 
+// 키보드로부터 0~9 사의 겹치지 않는 숫자 3개 입력받아 반환
 func InputNumbers() [3]int {
-
 	var input [3]int
+
+	for {
+		var num int
+
+		_, err := fmt.Scanf("%d\n", &num)
+		if err != nil { // 에러가 아무것도 아닌게 아닌 경우 => 에러가 존재하는 경우
+			fmt.Println("error occur")
+			continue
+
+		}
+
+		// fmt.Println(&num, num)
+		if num > 999 {
+			fmt.Println("네 자리 이상 입력")
+			continue
+		}
+
+		success := true
+
+		idx := 0
+		for num > 0 {
+			n := num % 10
+			num = num / 10
+
+			duplicated := false
+			for j := 0; j < idx; j++ {
+				if input[j] == n {
+					//	겹침 다시 뽑
+					duplicated = true
+					break
+
+				}
+			}
+
+			if duplicated {
+				fmt.Println("다시 뽑으세여")
+				success = false
+				break
+			}
+
+			input[idx] = n
+			idx++
+		}
+		if !success {
+			continue
+		}
+
+		break
+	}
+
+	input[0], input[2] = input[2], input[0]
+	fmt.Println(input)
 	return input
 }
 
-func CompareNumbers(numbers, inputNumbers [3]int) bool {
-	return true
+func CompareNumbers(numbers, inputNumbers [3]int) Result {
+	strikes := 0
+	balls := 0
+
+	for i := 0; i < 3; i++ {
+		for j := 0; j < 3; j++ {
+			if numbers[i] == inputNumbers[j] {
+				if i == j {
+					strikes++
+				} else {
+					balls++
+				}
+			}
+			break
+		}
+	}
+
+	return Result{strikes, balls}
 }
 
-func PrintResult(result bool) {
-	fmt.Println(result)
+func PrintResult(result Result) {
+	fmt.Printf("%dS %dB", result.strikes, result.balls)
 }
 
-func IsEndGame(result bool) bool {
-	return true
+func IsEndGame(result Result) bool {
+	return result.strikes == 3
 }
