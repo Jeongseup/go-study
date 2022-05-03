@@ -27,3 +27,27 @@ reference counter를 부여해서 이게 0이 되는 경우
 스크립트 언어에서의 referecen같은 느낌이 날 수 있다. 
 하지만 헷갈리므로 왠만하면 `b := append(a, 1)` 이렇게 추가하는 경우 
 a와 b가 다른 애라고 생각하는 것이 좋다. 
+
+* slice bug
+`b := a[:4]`등으로 슬라이스로 데이터를 가져왔다고 해서 복사되는게 아니라
+참조하는 것이기 때문에 그냥 아예 새롭게 배열을 하나 make로 만들고
+for loop으로 아예 확실하게 복사하는 것이 낫다.
+
+
+* instance?
+객체를 생명체 같이 구체화 된 것.
+어떤 struct의 포인터 타입.
+
+```go
+	// 그냥 넣으면 안 바뀌고, a의 주소를 대입해줘야 set함수가 실행될 수 있다.
+	// 주소값이 복사되기 때문에 참조가 가능해진다.
+	// 기능 단위로 볼 것이냐?
+	SetNameByFunction(&a, "bbb")
+	fmt.Println(a)
+
+	// 관계가 있는 단위로 볼 것이냐?
+	// OOP에서 ER(Entity Relationship)이 중요함.
+	a.SetNameByMethod("ccc")
+	fmt.Println(a)
+
+```
