@@ -1,0 +1,81 @@
+INFO: 2022/05/06 11:54:24 log.go:34: Test
+INFO: 2022/05/06 11:54:24 log.go:29: End of Program
+INFO: 2022/05/06 11:54:32 log.go:34: Test
+INFO: 2022/05/06 11:54:32 log.go:29: End of Program
+INFO: 2022/05/06 11:54:35 log.go:34: Test
+INFO: 2022/05/06 11:54:35 log.go:29: End of Program
+INFO: 2022/05/06 11:54:36 log.go:34: Test
+INFO: 2022/05/06 11:54:36 log.go:29: End of Program
+2022/05/06 11:55:45 Logging2
+INFO: 2022/05/06 11:55:45 log.go:37: Test
+2022/05/06 11:55:45 Logging
+INFO: 2022/05/06 11:55:45 log.go:32: End of Program
+INFO: 2022/05/06 11:55:59 log.go:36: Test
+2022/05/06 11:55:59 Logging
+INFO: 2022/05/06 11:55:59 log.go:32: End of Program
+INFO: 2022/05/06 11:56:20 log.go:36: Test
+2022/05/06 11:56:20 Logging
+INFO: 2022/05/06 11:56:20 log.go:32: End of Program
+INFO: 2022/05/06 11:56:41 log.go:36: Test
+2022/05/06 11:56:41 Logging
+INFO: 2022/05/06 11:56:41 log.go:32: End of Program
+
+INFO: 2022/05/06 11:56:51 log.go:36: Test
+2022/05/06 11:56:51 Logging
+INFO: 2022/05/06 11:56:51 log.go:32: End of Program
+
+2022/05/06 11:57:29 Before Test
+INFO: 2022/05/06 11:57:29 log.go:37: Test
+2022/05/06 11:57:29 After Test
+2022/05/06 11:57:29 Logging
+INFO: 2022/05/06 11:57:29 log.go:32: End of Program
+
+2022/05/06 12:02:45 Before Test
+INFO: 2022/05/06 12:02:45 log.go:40: Test
+2022/05/06 12:02:45 After Test
+2022/05/06 12:02:45 Logging
+INFO: 2022/05/06 12:02:45 log.go:35: End of Program
+
+2022/05/06 12:02:51 Before Test
+INFO: 2022/05/06 12:02:51 log.go:40: Test
+2022/05/06 12:02:51 After Test
+2022/05/06 12:02:51 Logging
+INFO: 2022/05/06 12:02:51 log.go:35: End of Program
+
+2022/05/06 12:03:37 Before Test
+2022/05/06 12:03:47 Before Test
+2022/05/06 12:03:47 After Test
+2022/05/06 12:03:47 Logging
+2022/05/06 12:04:27 Before Test
+INFO: 2022/05/06 12:04:27 log.go:42: Test
+2022/05/06 12:04:27 After Test
+2022/05/06 12:04:27 Logging
+INFO: 2022/05/06 12:04:27 log.go:37: End of Program
+
+2022/05/06 12:05:02 Before Test
+INFO: 2022/05/06 12:05:02 log.go:42: Test
+2022/05/06 12:05:02 After Test
+2022/05/06 12:05:02 Logging
+INFO: 2022/05/06 12:05:02 log.go:37: End of Program
+
+INFO: 2022/05/06 12:05:37 log.go:39: Test
+INFO: 2022/05/06 12:05:37 log.go:34: End of Program
+
+2022/05/06 12:05:51 Before Test
+INFO: 2022/05/06 12:05:51 log.go:39: Test
+2022/05/06 12:05:51 After Test
+2022/05/06 12:05:51 Logging
+INFO: 2022/05/06 12:05:51 log.go:34: End of Program
+
+2022/05/06 12:05:58 Before Test
+INFO: 2022/05/06 12:05:58 log.go:39: Test
+2022/05/06 12:05:58 After Test
+2022/05/06 12:05:58 Logging
+INFO: 2022/05/06 12:05:58 log.go:34: End of Program
+
+2022/05/06 12:06:16 Before Test
+INFO: 2022/05/06 12:06:16 log.go:40: Test
+2022/05/06 12:06:16 After Test
+2022/05/06 12:06:16 Logging
+INFO: 2022/05/06 12:06:16 log.go:35: End of Program
+

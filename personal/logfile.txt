@@ -1,0 +1,6 @@
+2022/05/06 12:07:33 Before Test
+INFO: 2022/05/06 12:07:33 log.go:40: Test
+2022/05/06 12:07:33 After Test
+2022/05/06 12:07:33 Logging
+INFO: 2022/05/06 12:07:33 log.go:35: End of Program
+
