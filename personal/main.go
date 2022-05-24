@@ -3,11 +3,10 @@ package main
 import (
 	"fmt"
 
-	./testlib
+	"github.com/Jeongseup/go-study/personal/greeting"
 )
 
 func main() {
-	fmt.Println("")
-	song := testlib.GetMusic("Alicia Keys")
-	println(song)
+	msg := greeting.Hello("seup")
+	fmt.Println(msg)
 }
