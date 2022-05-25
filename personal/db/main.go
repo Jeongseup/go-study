@@ -15,6 +15,22 @@ const (
 	dbname   = "study"
 )
 
+type Post struct {
+}
+
+func (post *Post) Create(db *sql.DB, statement string) (err error) {
+	// insert
+	insertStmt := `insert into "students"("name", "roll") values('john', 'non')`
+
+	stmt, err := db.Prepare(statement)
+	defer stmt.Close()
+
+	err = stmt.QueryRow(post.Content)
+	_, e := db.Exec(insertStmt)
+	CheckError(e)
+
+}
+
 func main() {
 	// db connection
 	psqlconn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
@@ -31,11 +47,7 @@ func main() {
 	CheckError(err)
 	fmt.Println("connected!")
 
-	// logics
-	// insert
-	// insertStmt := `insert into "students"("name", "roll") values('john', 'non')`
-	// _, e := db.Exec(insertStmt)
-	// CheckError(e)
+	statement := `insert into students (name, roll) values($1, $2) returning id`
 
 	// dynamic
 	//insertDynStmt := `insert into "students"("name", "roll") values($1, $2)`

@@ -18,6 +18,7 @@ b = a
 b := a[:]
 
 
+
 append function is posssible only slice! NOT array.
 because array dont need to that function, just insert data into index where you want 
 ```
