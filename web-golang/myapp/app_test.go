@@ -15,17 +15,31 @@ func TestIndexPathHandler(t *testing.T) {
 	res := httptest.NewRecorder()
 	req := httptest.NewRequest("GET", "/", nil)
 
-	// indexHandler(res, req)
+	mux := NewHttpHandler()
+	// mux.ServeHTTP(res, req)
+
+	assert.Equal(http.StatusOK, res.Code)
+	data, _ := ioutil.ReadAll(res.Body)
+	assert.Equal("Hello World", string(data))
+}
+
+func TestIndexPathHandler_WithoutName(t *testing.T) {
+	assert := assert.New(t)
+
+	res := httptest.NewRecorder()
+	req := httptest.NewRequest("GET", "/bar", nil)
+
+	// barHandler(res, req)
 	mux := NewHttpHandler()
 	mux.ServeHTTP(res, req)
 
 	assert.Equal(http.StatusOK, res.Code)
 
 	data, _ := ioutil.ReadAll(res.Body)
-	assert.Equal("Hello World", string(data))
+	assert.Equal("Hello seup!", string(data))
 }
 
-func TestIndexPathHandler_WithoutName(t *testing.T) {
+func TestIndexPathHandler_WithName(t *testing.T) {
 	assert := assert.New(t)
 
 	res := httptest.NewRecorder()
