@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	// "github.com/Jeongseup/go-study/web-golang/myapp"
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
