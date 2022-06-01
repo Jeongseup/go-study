@@ -8,3 +8,7 @@ GOBIN 'go install' 해서 생성되는 실행파일의 저장 경로 /bin
 
 출처: https://litaro.tistory.com/entry/Go-Packages?category=794245 [litaro's blog]
 ㅁㅇㅇㅁㅇ
+
+
+- [golang-development study](https://youtu.be/W5b64DXeP0o)
+
