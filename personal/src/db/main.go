@@ -21,6 +21,7 @@ type Post struct {
 func (post *Post) Create(db *sql.DB, statement string) (err error) {
 	// insert
 	insertStmt := `insert into "students"("name", "roll") values('john', 'non')`
+	// https://www.youtube.com/watch?v=sxaFWBggS3U
 
 	stmt, err := db.Prepare(statement)
 	defer stmt.Close()
