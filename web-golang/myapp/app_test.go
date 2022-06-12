@@ -17,5 +17,5 @@ func TestIndex(t *testing.T) {
 
 	res, err := http.Get(ts.URL)
 	assert.NoError(err)
-	assert.Equal(http.StatusOK, res.Code)
+	assert.Equal(http.StatusOK, res.StatusCode)
 }

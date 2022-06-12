@@ -10,5 +10,33 @@ GOBIN 'go install' 해서 생성되는 실행파일의 저장 경로 /bin
 ㅁㅇㅇㅁㅇ
 
 
+unitl 1:33:35
+
+```go
+
+a := []int{1,2,3} // slice
+a := [...]int{1,2,3} // array
+
+// slice
+a := [...]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+// copy a
+// NOT reference
+b = a
+// But slice a like array[:] (which means sliced)
+// all data will be refercens
+// that is both in slice and in array 
+b := a[:]
+
+
+
+append function is posssible only slice! NOT array.
+because array dont need to that function, just insert data into index where you want 
+```
+
+
+
 - [golang-development study](https://youtu.be/W5b64DXeP0o)
 
+
+- [Learn Go Programming by Building 11 Projects](https://youtu.be/jFfo23yIWac)
