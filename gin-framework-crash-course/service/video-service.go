@@ -3,7 +3,7 @@ package service
 import "github.com/Jeongseup/gin-framework-crash-course/entity"
 
 type VideoService interface {
-	Save(entity.Video) entity.Video
+	Save(video entity.Video)
 	FindAll() []entity.Video
 }
 
@@ -12,12 +12,13 @@ type videoService struct {
 }
 
 func New() VideoService {
-	return &videoService{}
+	return &videoService{
+		videos: []entity.Video{},
+	}
 }
 
-func (service *videoService) Save(video entity.Video) entity.Video {
+func (service *videoService) Save(video entity.Video) {
 	service.videos = append(service.videos, video)
-	return video
 }
 
 func (service *videoService) FindAll() []entity.Video {
