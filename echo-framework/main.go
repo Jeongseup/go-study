@@ -1,20 +1,17 @@
 package main
 
 import (
-	"fmt"
 	"net/http"
+
+	"github.com/labstack/echo/v4"
 )
 
-// type Handler .. interface {}
-
-type MyWebServerType bool
-
-func (m MyWebServerType) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "well, hello there!!")
-}
-
 func main() {
-	var k MyWebServerType
+	e := echo.New()
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Hello World!!!")
+	})
 
-	http.ListenAndServe("localhost:8000", k)
+	e.Logger.Print("Listening on port 8080")
+	e.Logger.Fatal(e.Start(":8080"))
 }
