@@ -4,6 +4,12 @@ import (
 	"testing"
 )
 
+type DiscountRepositoryMock struct{}
+
+func (drm DiscountRepositoryMock) FindCurrentDiscount() int {
+	return 20
+}
+
 func TestDiscoountCalulator(t *testing.T) {
 	type testCase struct {
 		name                  string
@@ -22,12 +28,9 @@ func TestDiscoountCalulator(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			calculator, err := NewDiscountCalculator(tc.minimumPurchaseAmount, tc.discout)
+			discountRepositryMock := DiscountRepositoryMock{}
+			calculator, err := NewDiscountCalculator(tc.minimumPurchaseAmount, discountRepositryMock)
 			if err != nil {
-				// Fail+log
-				// t.Errorf("could not instantiate the calculator %s", err.Error())
-				// t.FailNow()
-				// Fatal = Fail + log
 				t.Fatalf("could not instantiate the calculator %s", err.Error())
 			}
 
@@ -41,7 +44,8 @@ func TestDiscoountCalulator(t *testing.T) {
 }
 
 func TestDiscountCalculatorShoudFailWithZeroMinimumAmount(t *testing.T) {
-	_, err := NewDiscountCalculator(0, 20)
+	discountRepositryMock := DiscountRepositoryMock{}
+	_, err := NewDiscountCalculator(0, discountRepositryMock)
 	if err == nil {
 		t.Fatalf("should not create the calculator with zero value")
 	}
