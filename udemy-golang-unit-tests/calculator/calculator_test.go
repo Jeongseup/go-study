@@ -6,6 +6,7 @@ import (
 
 func TestDiscoountCalulator(t *testing.T) {
 	type testCase struct {
+		name                  string
 		minimumPurchaseAmount int
 		discout               int
 		purchaseAmount        int
@@ -13,20 +14,21 @@ func TestDiscoountCalulator(t *testing.T) {
 	}
 
 	testCases := []testCase{
-		{minimumPurchaseAmount: 100, discout: 20, purchaseAmount: 150, expectedAmount: 130},
-		{minimumPurchaseAmount: 100, discout: 20, purchaseAmount: 200, expectedAmount: 160},
-		{minimumPurchaseAmount: 100, discout: 20, purchaseAmount: 350, expectedAmount: 290},
-		{minimumPurchaseAmount: 100, discout: 20, purchaseAmount: 50, expectedAmount: 50},
+		{name: "should apply 20", minimumPurchaseAmount: 100, discout: 20, purchaseAmount: 150, expectedAmount: 130},
+		{name: "should apply 40", minimumPurchaseAmount: 100, discout: 1, purchaseAmount: 200, expectedAmount: 160},
+		{name: "should apply 60", minimumPurchaseAmount: 100, discout: 20, purchaseAmount: 350, expectedAmount: 290},
+		{name: "should not apply", minimumPurchaseAmount: 100, discout: 20, purchaseAmount: 50, expectedAmount: 50},
 	}
 
 	for _, tc := range testCases {
-		// t.Log(tc)
-		tempCalculator := NewDiscountCalculator(tc.minimumPurchaseAmount, tc.discout)
-		tempAmount := tempCalculator.Calculator(tc.purchaseAmount)
+		t.Run(tc.name, func(t *testing.T) {
+			tempCalculator := NewDiscountCalculator(tc.minimumPurchaseAmount, tc.discout)
+			tempAmount := tempCalculator.Calculator(tc.purchaseAmount)
 
-		if tempAmount != tc.expectedAmount {
-			t.Errorf("expected %v, got %v", tc.expectedAmount, tempAmount)
-		}
+			if tempAmount != tc.expectedAmount {
+				t.Errorf("expected %v, got %v", tc.expectedAmount, tempAmount)
+			}
+		})
 	}
 }
 
