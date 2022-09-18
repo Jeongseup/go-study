@@ -60,7 +60,6 @@ func ReadCSV(b io.Reader) ([]Movie, error) {
 
 // AddMoviesFromText 함수는 CSV 파서를 사용한다.
 func AddMoviesFromText() error {
-
 	// 이 예제는 csv 패키지를 사용해 문자열을 가져온 후 버퍼로 변환해 읽는 예를 보여준다.
 	in := `
 - first out headers

@@ -5,4 +5,5 @@ use (
 	./chapter1/interfaces
 	./chapter1/filedirs
 	./chapter1/csvformat
+	./chapter1/tempfiles
 )
