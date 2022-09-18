@@ -10,4 +10,6 @@ use (
 	./chapter1/templates
 	// chapter2
 	./chapter2/flags
+	./chapter2/cmdargs
+
 )
