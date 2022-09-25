@@ -12,4 +12,5 @@ use (
 	./chapter2/flags
 	./chapter2/cmdargs
 	./chapter2/envvar
+	./chapter2/confformat
 )
