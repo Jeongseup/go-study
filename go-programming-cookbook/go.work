@@ -11,5 +11,5 @@ use (
 	// chapter2
 	./chapter2/flags
 	./chapter2/cmdargs
-
+	./chapter2/envvar
 )
