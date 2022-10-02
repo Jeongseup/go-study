@@ -14,4 +14,5 @@ use (
 	./chapter2/envvar
 	./chapter2/confformat
 	./chapter2/pipes
+	./chapter2/signals
 )
