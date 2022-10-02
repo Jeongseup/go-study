@@ -13,4 +13,5 @@ use (
 	./chapter2/cmdargs
 	./chapter2/envvar
 	./chapter2/confformat
+	./chapter2/pipes
 )
