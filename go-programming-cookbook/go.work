@@ -15,4 +15,5 @@ use (
 	./chapter2/confformat
 	./chapter2/pipes
 	./chapter2/signals
+	./chapter2/ansicolor
 )
