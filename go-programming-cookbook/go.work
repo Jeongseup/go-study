@@ -21,4 +21,5 @@ use (
 	./chapter3/mymath
 	./chapter3/currency
 	./chapter3/nulls
+	./chapter3/myencoding
 )
