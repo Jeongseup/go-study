@@ -18,4 +18,5 @@ use (
 	./chapter2/ansicolor
 	// chapter3
 	./chapter3/dataconv
+	./chapter3/mymath
 )
