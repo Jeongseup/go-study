@@ -23,4 +23,5 @@ use (
 	./chapter3/nulls
 	./chapter3/myencoding
 	./chapter3/tags
+	./chapter3/collections
 )
