@@ -19,4 +19,5 @@ use (
 	// chapter3
 	./chapter3/dataconv
 	./chapter3/mymath
+	./chapter3/currency
 )
