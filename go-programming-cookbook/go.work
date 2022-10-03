@@ -16,4 +16,6 @@ use (
 	./chapter2/pipes
 	./chapter2/signals
 	./chapter2/ansicolor
+	// chapter3
+	./chapter3/dataconv
 )
