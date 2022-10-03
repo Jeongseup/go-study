@@ -20,4 +20,5 @@ use (
 	./chapter3/dataconv
 	./chapter3/mymath
 	./chapter3/currency
+	./chapter3/nulls
 )
