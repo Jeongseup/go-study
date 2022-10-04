@@ -24,4 +24,7 @@ use (
 	./chapter3/myencoding
 	./chapter3/tags
 	./chapter3/collections
+	// chapter4
+	./chapter4/basicerrors
+	./chapter4/errwrap
 )
