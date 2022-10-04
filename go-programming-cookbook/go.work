@@ -27,4 +27,5 @@ use (
 	// chapter4
 	./chapter4/basicerrors
 	./chapter4/errwrap
+	./chapter4/mylog
 )
