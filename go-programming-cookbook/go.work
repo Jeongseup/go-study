@@ -38,4 +38,5 @@ use (
 	./chapter5/dns
 	./chapter5/websocket
 	./chapter5/rpc
+	./chapter5/mail
 )
