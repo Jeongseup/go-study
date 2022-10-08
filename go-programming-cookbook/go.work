@@ -30,4 +30,5 @@ use (
 	./chapter4/mylog
 	./chapter4/structured
 	./chapter4/mycontext
+	./chapter4/global
 )
