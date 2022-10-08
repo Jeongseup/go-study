@@ -32,4 +32,6 @@ use (
 	./chapter4/mycontext
 	./chapter4/global
 	./chapter4/panic
+	// chapter5
+	./chapter5/tcp
 )
