@@ -34,4 +34,5 @@ use (
 	./chapter4/panic
 	// chapter5
 	./chapter5/tcp
+	./chapter5/udp
 )
