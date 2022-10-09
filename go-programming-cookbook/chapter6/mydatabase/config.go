@@ -26,7 +26,7 @@ func Setup() (*sql.DB, error) {
 	// connection string
 	psqlconn := fmt.Sprintf("host=%s port=%d user=%s dbname=%s sslmode=disable", host, port, user, dbname)
 	// open database
-	db, err := sql.Open("postgres", psqlconn)c
+	db, err := sql.Open("postgres", psqlconn)
 	if err != nil {
 		return nil, err
 	}
