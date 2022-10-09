@@ -39,4 +39,6 @@ use (
 	./chapter5/websocket
 	./chapter5/rpc
 	./chapter5/mail
+	// chapter6
+	./chapter6/mydatabase
 )
