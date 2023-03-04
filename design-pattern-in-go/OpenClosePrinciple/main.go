@@ -85,12 +85,30 @@ func (s SizeSpecification) IsSatisfied(p *Product) bool {
 	return p.size == s.size
 }
 
+type AndSpectification struct {
+	first, second Specification
+}
+
+func (a AndSpectification) IsSatisfied(p *Product) bool {
+	return a.first.IsSatisfied(p) && a.second.IsSatisfied(p)
+}
+
 type BetterFilter struct {
 	//
 }
 
+func (f *BetterFilter) Filter(
+	products []Product, spec Specification) []*Product {
 
-func (f *BetterFilter) Filter {}
+	result := make([]*Product, 0)
+	for i, v := range products {
+		if spec.IsSatisfied(&v) {
+			result = append(result, &products[i])
+		}
+	}
+	return result
+}
+
 func main() {
 	apple := Product{"Apple", green, small}
 	tree := Product{"Tree", green, large}
@@ -102,4 +120,20 @@ func main() {
 	for _, v := range f.FilterByColor(products, green) {
 		fmt.Printf(" - %s is green\n", v.name)
 	}
+
+	fmt.Printf("Green products (new):\n")
+	greenSpec := ColorSpecification{green}
+	bf := BetterFilter{}
+	for _, v := range bf.Filter(products, greenSpec) {
+		fmt.Printf(" - %s is green\n", v.name)
+	}
+
+	largeSpec := SizeSpecification{large}
+	lgSpec := AndSpectification{greenSpec, largeSpec}
+	fmt.Printf("Large & Green products (new):\n")
+
+	for _, v := range bf.Filter(products, lgSpec) {
+		fmt.Printf(" - %s is large & green\n", v.name)
+	}
+
 }

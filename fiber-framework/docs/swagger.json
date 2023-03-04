@@ -1,0 +1,181 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server Petstore server.",
+        "title": "Swagger Example API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "name": "API Support",
+            "url": "http://www.swagger.io/support",
+            "email": "support@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/v1/api",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Geting for welcome endpoint",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Welcome"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/api/device": {
+            "post": {
+                "description": "Create new infomation of device",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "device"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Device"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/api/devices": {
+            "get": {
+                "description": "Get all existing of devices",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "devices"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Device"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/api/devices/{id}": {
+            "get": {
+                "description": "Get for device details",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "device"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/entities.Device"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update device information",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "device"
+                ],
+                "parameters": [
+                    {
+                        "description": "SubscribeTx",
+                        "name": "subscribe_tx",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "SubscribeAnnouncement",
+                        "name": "subscribe_announcement",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/entities.Device"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "entities.Device": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "subscribe_announcement": {
+                    "type": "boolean"
+                },
+                "subscribe_tx": {
+                    "type": "boolean"
+                },
+                "token": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Device": {
+            "description": "ID account information",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "subscribe_announcement": {
+                    "type": "boolean"
+                },
+                "subscribe_tx": {
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "token": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

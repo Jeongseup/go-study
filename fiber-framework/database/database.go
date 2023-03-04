@@ -1,33 +1,43 @@
 package database
 
 import (
+	"database/sql"
 	"log"
-	"os"
 
-	"example.com/models"
-	"gorm.io/driver/sqlite"
-	"gorm.io/gorm"
-	"gorm.io/gorm/logger"
+	"github.com/uptrace/bun"
+	"github.com/uptrace/bun/dialect/pgdialect"
+	"github.com/uptrace/bun/driver/pgdriver"
+	"github.com/uptrace/bun/extra/bundebug"
 )
 
-type DbInstance struct {
-	Db *gorm.DB
+type DatabaseInstance struct {
+	DB *bun.DB
 }
 
-var Database DbInstance
+var Database DatabaseInstance
 
-func ConnectDb() {
-	db, err := gorm.Open(sqlite.Open("api.db"), &gorm.Config{})
+func ConnectDatabase() {
+	dsn := "postgres://student:@localhost/study?sslmode=disable"
+	pgdb := sql.OpenDB(pgdriver.NewConnector(
+		pgdriver.WithDSN(dsn),
+		//  pgdriver.WithTLSConfig(...)
+	))
 
-	if err != nil {
-		log.Fatal("Failed to connect to the database! \n", err.Error())
-		os.Exit(2)
-	}
+	// TODO : 에러체크 필ㅛ
+	db := bun.NewDB(pgdb, pgdialect.New())
+
+	// if err != nil {
+	// 	log.Fatal("Failed to connect to the database! \n", err.Error())
+	// 	os.Exit(2)
+	// }
 
 	log.Println("Connected to the database successfully")
-	db.Logger = logger.Default.LogMode(logger.Info)
-	// TODO: Add migrations
-	db.AutoMigrate(&models.User{}, &models.Product{}, &models.Order{})
 
-	Database = DbInstance{Db: db}
+	// Bun debug hook
+	db.AddQueryHook(bundebug.NewQueryHook(
+		bundebug.WithVerbose(true),
+		bundebug.FromEnv("BUNDEBUG"),
+	))
+
+	Database = DatabaseInstance{DB: db}
 }

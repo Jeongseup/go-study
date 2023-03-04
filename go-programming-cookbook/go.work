@@ -43,4 +43,5 @@ use (
 	./chapter6/mydatabase
 	// chapter7
 	./chapter7/client
+	./chapter7/rest
 )

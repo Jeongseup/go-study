@@ -1,6 +1,0 @@
-go 1.18
-
-use (
-	./11_interface
-	./12_recover
-)
