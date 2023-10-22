@@ -1,0 +1,8 @@
+go 1.21.0
+
+use (
+	./server
+	./client-json
+	./client
+	./service
+)
